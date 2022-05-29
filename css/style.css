@@ -29,7 +29,13 @@ html {
     font-family: 'Montserrat', sans-serif;
     max-width: 1920px;
     margin: 0 auto;
-    background: linear-gradient(#079db1, #ebdae6) fixed;
+    background: linear-gradient(var(--color-light), #ebdae6) fixed;
+  }
+
+  :root {
+    --color-light: #079db1;
+    --color-medium: #087685;
+    --color-dark:#03363d; 
   }
 
   .flex {
@@ -40,7 +46,7 @@ html {
   .b-marquee {
     white-space: nowrap;
     overflow: hidden;
-    background: #03363d;
+    background: var(--color-dark);
     color: #fff;
     padding: 10px;
     position: relative;
@@ -76,12 +82,26 @@ html {
   /**/
 
   .container-section {
-      margin-top: 30px;
+      margin-top: 50px;
       padding: 0 30px;
   }
 
   .main-text__title {
+     font-size: 40px;
       text-align: center;
+      color: #fff;
+      margin: 100px 0 30px 0;
+      transition: all .6s ease;
+  }
+
+  .main-text__title:hover {
+    color: var(--color-medium);
+  }
+
+  .main-text__text-descr {
+    text-align: center;
+    color: var(--color-medium);
+    margin-bottom: 100px;
   }
 
   .header {
@@ -90,11 +110,13 @@ html {
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
 
-  
+  .header__link {
+    color: var(--color-medium);
+  }
 
   .header__link:hover {
-    color: #03363d;
-    border-bottom:1px solid #03363d;
+    color: var(--color-medium);
+    border-bottom:1px solid var(--color-dark);
     margin-bottom: -1px;
   }
 
@@ -106,6 +128,7 @@ html {
   .gallery-item {
       position: relative;
       max-width: 300px;
+      height: 300px;
       background-color: #fff;
       padding: 30px;
       text-align: center;
@@ -142,19 +165,48 @@ html {
 
   /*first-element*/
 
+  .slider {
+    margin-bottom: 50px;
+  }
+
+  .swiper-slide {
+    border-radius: 15px;
+  }
+
+  .headline-second {
+    color: var(--color-dark);
+    text-align: center;
+    border-bottom: 1px solid var(--color-dark);
+  }
+
   .first-element__text {
-      margin-bottom: 40px;
+    color: var(--color-dark);
+    border: 1px solid var(--color-light);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 40px;
+  }
+
+  .first-element__headline3 {
+    text-align: center;
+    color: var(--color-dark);
   }
 
   .first-element__list {
-      gap: 15px;
+    justify-content: space-between;
+  }
+
+  .first-elemen__link {
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
   }
 
   .links {
       transition-property: outline, background-color, transform;
       transition-duration: .3s;
       transition-timing-function: ease;
-      
+      border-radius: 15px;
   }
 
   .links:hover {
@@ -163,6 +215,64 @@ html {
 
   }
 
+  .first-element_goal {
+    justify-content: space-between;
+  }
+
+  .first-element__goal_text {
+    padding: 20px;
+    color: white;
+    background-color: var(--color-dark);
+    border-radius: 20px;
+    width: 45%;
+    text-align: center;
+  }
+
+
+/* стрелка */
+
+.arrow-down {
+  margin-bottom: 50px;
+}
+
+.arrow-down span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-bottom: 5px solid var(--color-medium);
+  border-right: 5px solid #087785cc;
+  transform: rotate(45deg);
+  margin: -16px;
+  animation: arrow-down 2s infinite;
+  margin: 0 auto;
+}
+.arrow-down span:nth-child(2){
+  animation-delay: -0.2s;
+}
+.arrow-down span:nth-child(3){
+  animation-delay: -0.4s;
+}
+@keyframes arrow-down {
+  0%{
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px,-20px);
+  }
+  50%{
+      opacity: 1;
+  }
+  100%{
+      opacity: 0;
+      transform: rotate(45deg) translate(20px,20px);
+  }
+}
+
+.conclusion {
+  color: var(--color-dark);
+    border: 1px solid var(--color-light);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 40px;
+}
 
 /* second element */
 
@@ -181,17 +291,28 @@ html {
 
 /* third element */
 
+.third-element__title {
+  color: var(--color-dark);
+  text-align: center;
+}
+
 .third-text {
   border-radius: 20px;
   background-color: #fff;
   padding: 15px;
+  color: #087685;
+}
+
+.third-element__list {
+  gap: 15px;
+  margin-bottom: 50px;
 }
 
 
 /* footer */
 
 .footer {
-  background-color: #03363d;
+  background-color: var(--color-dark);
   padding: 20px;
   color: #fff;
 }
