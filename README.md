@@ -1,1 +1,1 @@
-https://stepovaaya.github.io/kursovoi-project/
+https://stepovaaya.github.io/kursovaya/
